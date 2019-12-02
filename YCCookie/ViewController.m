@@ -18,21 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    NSString *str = @"var app_cookieNames = document.cookie.split('; ').map(\
-    function(cookie) {\
-    return cookie.split('=')[0];\
-    }\
-    )";
-    
-    NSLog(@"str==%@", str);
-    
      
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.webView];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://www.mihuashi.com"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]];
     
     [self.webView loadRequest:request];
 }
@@ -57,9 +47,9 @@
 #pragma mark - YCWkWebViewCookieDelegate
 - (NSArray <NSHTTPCookie *> *)webviewCookies {
  
-    NSDictionary *properties = @{NSHTTPCookieName : @"remember_token",
-     NSHTTPCookieValue : @"EAh_EUPkrTF7VYZScu7ANw",
-     NSHTTPCookieDomain : @"www.mihuashi.com",
+    NSDictionary *properties = @{NSHTTPCookieName : @"token",
+     NSHTTPCookieValue : @"token_test_value",
+     NSHTTPCookieDomain : @"www.baidu.com",
      NSHTTPCookiePath : @"/"
     };
     
